@@ -32,20 +32,20 @@ header {
     padding: 0 20px;
 }
 
-/* --- AJUSTE DE TAMAÑO DEL LOGO AQUÍ --- */
-.logo {
+/* --- AJUSTE DE TAMAÑO PEQUEÑO PARA EL LOGO --- */
+.logo { 
     display: flex;
     align-items: center;
-    gap: 8px;              /* Espacio reducido entre imagen y texto */
-    font-size: 1.8rem;
-    font-weight: bold;
+    gap: 10px;              /* Espacio entre el icono y el texto */
+    font-size: 1.8rem; 
+    font-weight: bold; 
 }
 
 .logo-icon {
-    height: 28px;           /* ALTURA REDUCIDA para que se vea más pequeño */
+    height: 28px;           /* Tamaño reducido igual al ejemplo de referencia */
     width: auto;
 }
-/* -------------------------------------- */
+/* -------------------------------------------- */
 
 .orange-text { color: var(--naranja); }
 .blue-text { color: var(--azul); }
