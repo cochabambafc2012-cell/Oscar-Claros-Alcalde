@@ -32,13 +32,18 @@ header {
     padding: 0 20px;
 }
 
-.logo { font-size: 1.8rem; font-weight: bold; }
-.orange-text { color: var(--naranja); }
-.blue-text { color: var(--azul); }
+.logo {
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen con el texto */
+    gap: 10px;           /* Espacio entre el icono y el texto */
+    font-size: 1.8rem;
+    font-weight: bold;
+}
 
-nav ul { list-style: none; display: flex; gap: 20px; margin: 0; }
-nav a { text-decoration: none; color: var(--azul); font-weight: bold; font-size: 0.9rem; }
-nav a:hover { color: var(--naranja); }
+.logo-icon {
+    height: 40px;       /* Ajusta el tamaño del icono según tu preferencia */
+    width: auto;
+}
 
 .btn-main {
     background: var(--azul);
