@@ -6,7 +6,7 @@
     <title>Oscar Claros - El Cambio Empieza Ahora</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -15,33 +15,69 @@
                 <img src="favicon.png" alt="Logo Oscar Claros" class="logo-icon">
                 <span class="orange-text">Oscar</span><span class="blue-text">Claros</span>
             </div>
-            <nav>
+            
+            <!-- Menú hamburguesa para móvil -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav id="mainNav" class="nav-menu">
                 <ul>
-                    <li><a href="#">INICIO</a></li>
-                    <li><a href="#">BIOGRAFÍA</a></li>
-                    <li><a href="#">PLAN DE GOBIERNO</a></li>
-                    <li><a href="#">SERVICIOS</a></li>
+                    <li><a href="#inicio">INICIO</a></li>
+                    <li><a href="#biografia">BIOGRAFÍA</a></li>
+                    <li><a href="#plan">PLAN DE GOBIERNO</a></li>
+                    <li><a href="#servicios">SERVICIOS</a></li>
                 </ul>
+                <a href="#" class="btn-main">ÚNETE AHORA</a>
             </nav>
-            <a href="#" class="btn-main">ÚNETE AHORA</a>
         </div>
     </header>
 
-<section class="hero">
+    <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>¡OSCAR CLAROS!</h1>
             <p class="subtitle">Candidato comprometido con el futuro.</p>
             <div class="hero-btns">
-                <a href="#" class="btn-red">Ver Propuestas</a>
-                <a href="#" class="btn-blue">Únete al Cambio</a>
+                <a href="#propuestas" class="btn-red">Ver Propuestas</a>
+                <a href="#unete" class="btn-blue">Únete al Cambio</a>
             </div>
             <div class="social-links">
-                <span>Síguenos en:</span>
-                <div class="icons">
-                    <span class="icon fb">Facebook</span>
-                    <span class="icon ig">Instagram</span>
-                    <span class="icon tk">TikTok</span>
-                    <span class="icon wa">WhatsApp</span>
+                <span class="social-title">Síguenos en:</span>
+                <div class="social-icons">
+                    <a href="#" class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-btn instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-btn tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="#" class="social-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <strong>546</strong>
+                            <span>VECINOS UNIDOS</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-eye"></i>
+                        <div>
+                            <strong>1.235</strong>
+                            <span>VISITAS WEB</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,21 +90,37 @@
         </div>
     </section>
 
-    <section class="agenda">
+    <section class="agenda" id="agenda">
         <h2>Agenda de Campaña</h2>
-        <p>Acompaña a Oscar Claros ¡El cambio es ahora!</p>
+        <p class="agenda-subtitle">Acompaña a Oscar Claros ¡El cambio es ahora!</p>
         
-        <div class="agenda-item">
-            <div class="date-box">
-                <span class="day">25</span>
-                <span class="month">DIC</span>
+        <div class="agenda-container">
+            <div class="agenda-item">
+                <div class="date-box">
+                    <span class="day">25</span>
+                    <span class="month">DIC</span>
+                </div>
+                <div class="event-info">
+                    <span class="time"><i class="far fa-clock"></i> 08:00 hrs</span>
+                    <h3>Encuentro Ciudadano - Zona Central</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Plaza Principal</p>
+                    <p class="description">Te esperamos para compartir nuestras propuestas para un futuro mejor.</p>
+                    <button class="btn-outline">Ver Ubicación</button>
+                </div>
             </div>
-            <div class="event-info">
-                <span class="time">08:00 hrs</span>
-                <h3>Encuentro Ciudadano - Zona Central</h3>
-                <p>📍 Plaza Principal</p>
-                <p>Te esperamos para compartir nuestras propuestas para un futuro mejor.</p>
-                <button class="btn-outline">Ver Ubicación</button>
+
+            <div class="agenda-item">
+                <div class="date-box">
+                    <span class="day">27</span>
+                    <span class="month">DIC</span>
+                </div>
+                <div class="event-info">
+                    <span class="time"><i class="far fa-clock"></i> 09:00 hrs</span>
+                    <h3>Presentación de Candidatura Oscar Claros</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Salon de Eventos Hillary Quillacollo, calle Sucre # 586</p>
+                    <p class="description">Acompáñanos en la presentación oficial de la candidatura de Oscar Claros. ¡Tu apoyo es fundamental!</p>
+                    <button class="btn-outline">Ver Ubicación</button>
+                </div>
             </div>
         </div>
     </section>
@@ -76,38 +128,116 @@
     <section class="countdown-section">
         <h2>TIEMPO PARA LA VICTORIA</h2>
         <div class="countdown-container">
-            <div class="time-box orange-bg"><span>66</span><small>DÍAS</small></div>
-            <div class="time-box blue-bg"><span>04</span><small>HORAS</small></div>
-            <div class="time-box orange-bg"><span>12</span><small>MINUTOS</small></div>
-            <div class="time-box blue-bg"><span>22</span><small>SEGUNDOS</small></div>
+            <div class="time-box orange-bg">
+                <span class="time-number">66</span>
+                <small>DÍAS</small>
+            </div>
+            <div class="time-box blue-bg">
+                <span class="time-number">04</span>
+                <small>HORAS</small>
+            </div>
+            <div class="time-box orange-bg">
+                <span class="time-number">12</span>
+                <small>MINUTOS</small>
+            </div>
+            <div class="time-box blue-bg">
+                <span class="time-number">22</span>
+                <small>SEGUNDOS</small>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-container">
             <div class="footer-col logo-col">
-                <div class="footer-logo">Oscar Claros</div>
-                <p>"El Cambio es Ahora"</p>
+                <div class="footer-logo">
+                    <span class="orange-text">Oscar</span><span class="blue-text">Claros</span>
+                </div>
+                <p class="footer-slogan">"El Cambio es Ahora"</p>
             </div>
             <div class="footer-col">
                 <h4>Navegación Rápida</h4>
                 <ul>
-                    <li><a href="#">Biografía</a></li>
-                    <li><a href="#">Plan de Gobierno</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Únete al Equipo</a></li>
+                    <li><a href="#biografia">Biografía</a></li>
+                    <li><a href="#plan">Plan de Gobierno</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#unete">Únete al Equipo</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contacto y Redes</h4>
-                <p>📧 contacto@oscarclaros.com</p>
-                <p>📞 +591 700-00000</p>
-                <p>📍 Sede Central, Bolivia</p>
+                <p><i class="far fa-envelope"></i> contacto@oscarclaros.com</p>
+                <p><i class="fas fa-phone"></i> +591 700-00000</p>
+                <p><i class="fas fa-map-marker-alt"></i> Sede Central, Bolivia</p>
             </div>
         </div>
         <div class="copyright">
             © 2026 Campaña Oscar Claros. Todos los derechos reservados.
         </div>
     </footer>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/59170000000" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Menú hamburguesa
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
+        // Contador regresivo real
+        function updateCountdown() {
+            const targetDate = new Date('2026-03-22T00:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.querySelectorAll('.time-box')[0].querySelector('.time-number').textContent = days.toString().padStart(2, '0');
+            document.querySelectorAll('.time-box')[1].querySelector('.time-number').textContent = hours.toString().padStart(2, '0');
+            document.querySelectorAll('.time-box')[2].querySelector('.time-number').textContent = minutes.toString().padStart(2, '0');
+            document.querySelectorAll('.time-box')[3].querySelector('.time-number').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Animación suave al scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
