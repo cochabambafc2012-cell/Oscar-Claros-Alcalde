@@ -697,6 +697,9 @@ footer {
         gap: 0;
         transition: right 0.3s ease;
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .nav-menu.active {
@@ -735,7 +738,7 @@ footer {
     }
 
     body.menu-open {
-        overflow: hidden;
+        overflow: visible;
     }
 
     body.menu-open::before {
@@ -747,6 +750,7 @@ footer {
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
         z-index: 999;
+        pointer-events: all;
     }
 
     /* Hero móvil */
