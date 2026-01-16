@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Oscar Claros - El Cambio Empieza Ahora</title>
+    <title>Oscar Claros - El Cambio Empieza Ahora</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,7 +13,7 @@
         <div class="nav-container">
             <div class="logo">
                 <img src="favicon.png" alt="Logo Oscar Claros" class="logo-icon">
-                <span class="orange-text">Dr. Oscar</span><span class="blue-text">Claros</span>
+                <span class="orange-text">Oscar</span><span class="blue-text">Claros</span>
             </div>
             
             <!-- Menú hamburguesa para móvil -->
@@ -166,7 +166,7 @@
             </div>
             <div class="footer-col">
                 <h4>Contacto y Redes</h4>
-                <p><i class="far fa-envelope"></i> contacto@oscarclaros.com</p>
+                <p><i class="far fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ae9e5e4feebe9fee5cae5f9e9ebf8e9e6ebf8e5f9a4e9e5e7">[email&#160;protected]</a></p>
                 <p><i class="fas fa-phone"></i> +591 700-00000</p>
                 <p><i class="fas fa-map-marker-alt"></i> Sede Central, Bolivia</p>
             </div>
@@ -181,14 +181,16 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Menú hamburguesa
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
+        const logo = document.querySelector('.logo');
         
         menuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             mainNav.classList.toggle('active');
+            logo.classList.toggle('menu-active');
             document.body.classList.toggle('menu-open');
         });
 
@@ -198,8 +200,21 @@
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
                 mainNav.classList.remove('active');
+                logo.classList.remove('menu-active');
                 document.body.classList.remove('menu-open');
             });
+        });
+
+        // Cerrar menú al hacer clic en el overlay (fondo oscuro)
+        document.body.addEventListener('click', (e) => {
+            if (document.body.classList.contains('menu-open')) {
+                if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && !logo.contains(e.target)) {
+                    menuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    logo.classList.remove('menu-active');
+                    document.body.classList.remove('menu-open');
+                }
+            }
         });
 
         // Contador regresivo real
@@ -230,14 +245,4 @@
                     e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                        target
