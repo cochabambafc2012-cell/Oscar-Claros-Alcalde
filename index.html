@@ -205,10 +205,15 @@
             });
         });
 
-        // Cerrar menú al hacer clic en el overlay (fondo oscuro)
-        document.body.addEventListener('click', (e) => {
+        // Cerrar menú al hacer clic en el overlay (fondo oscuro) - solo en el overlay, no en el menú
+        document.addEventListener('click', (e) => {
             if (document.body.classList.contains('menu-open')) {
-                if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && !logo.contains(e.target)) {
+                // Solo cerrar si el clic es fuera del menú, del toggle y del logo
+                const isClickInsideNav = mainNav.contains(e.target);
+                const isClickOnToggle = menuToggle.contains(e.target);
+                const isClickOnLogo = logo.contains(e.target);
+                
+                if (!isClickInsideNav && !isClickOnToggle && !isClickOnLogo) {
                     menuToggle.classList.remove('active');
                     mainNav.classList.remove('active');
                     logo.classList.remove('menu-active');
