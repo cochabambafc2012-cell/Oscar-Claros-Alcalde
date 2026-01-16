@@ -149,6 +149,7 @@ header {
 
 .btn-main:hover {
     background: var(--naranja);
+    color: white !important;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 20, 137, 0.3);
 }
@@ -728,6 +729,7 @@ footer {
 
     .nav-menu a:hover {
         background: rgba(255, 80, 0, 0.2);
+        color: white;
     }
 
     .btn-main {
@@ -735,6 +737,12 @@ footer {
         text-align: center;
         padding: 15px;
         background: var(--naranja);
+        color: white !important;
+    }
+
+    .btn-main:hover {
+        background: var(--naranja);
+        color: white !important;
     }
 
     body.menu-open {
