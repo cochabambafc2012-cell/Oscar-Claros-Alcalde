@@ -55,10 +55,15 @@ header {
     font-size: 1.8rem;
     font-weight: 800;
     z-index: 1001;
+    transition: var(--transicion);
+}
+
+.logo.menu-active .blue-text {
+    color: var(--blanco);
 }
 
 .logo-icon {
-    height: 70px;
+    height: 35px;
     width: auto;
 }
 
@@ -88,6 +93,10 @@ header {
     background: var(--azul);
     transition: var(--transicion);
     border-radius: 2px;
+}
+
+.menu-toggle.active span {
+    background: var(--blanco);
 }
 
 .menu-toggle.active span:nth-child(1) {
@@ -129,7 +138,7 @@ header {
 
 .btn-main {
     background: var(--azul);
-    color: white;
+    color: white !important;
     padding: 12px 25px;
     border-radius: 50px;
     text-decoration: none;
@@ -941,7 +950,7 @@ footer {
     }
 
     .logo-icon {
-        height: 65px;
+        height: 28px;
     }
 
     .hero-content h1 {
