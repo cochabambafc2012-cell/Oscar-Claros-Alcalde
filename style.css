@@ -670,7 +670,7 @@ header {
 .date-box .month {
     font-weight: 700;
     color: var(--naranja);
-    font-size: 1.1rem;
+    font-size: 3rem;
     margin-top: 5px;
 }
 
