@@ -661,7 +661,7 @@ header {
 }
 
 .date-box .day {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
     color: var(--azul);
     line-height: 1;
@@ -670,7 +670,7 @@ header {
 .date-box .month {
     font-weight: 700;
     color: var(--naranja);
-    font-size: 1.1rem;
+    font-size: 2rem;
     margin-top: 5px;
 }
 
