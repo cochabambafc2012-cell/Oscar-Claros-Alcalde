@@ -205,10 +205,10 @@ header {
     display: inline-block;
 }
 
-.btn-red:hover {
-    background: #cc0000;
+.btn-orange:hover {
+    background: #e64700;
     transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(230, 0, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(255, 80, 0, 0.3);
 }
 
 .btn-blue {
@@ -333,19 +333,150 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* Imagen hero */
+/* Imagen hero - 40% más grande en versión web */
 .hero-image {
-    flex: 1;
+    flex: 1.4;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .banner-img {
-    max-width: 100%;
+    max-width: 140%;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================================
+   GALERÍA DE FOTOS - CARRUSEL
+   ===================================================== */
+.gallery-section {
+    padding: 80px 20px;
+    background: var(--blanco);
+    text-align: center;
+}
+
+.gallery-section h2 {
+    color: var(--azul);
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto 30px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+    display: none;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 20, 137, 0.95), transparent);
+    color: white;
+    padding: 30px 20px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transicion);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:hover {
+    background: var(--naranja);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+.carousel-btn i {
+    font-size: 1.2rem;
+    color: var(--azul);
+}
+
+.carousel-btn:hover i {
+    color: white;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.indicator.active {
+    background: var(--naranja);
+    transform: scale(1.3);
+}
+
+.indicator:hover {
+    background: var(--azul);
 }
 
 /* =====================================================
@@ -370,12 +501,19 @@ header {
     margin-bottom: 50px;
 }
 
-.agenda-container {
+.agenda-wrapper {
     max-width: 900px;
     margin: 0 auto;
+}
+
+.agenda-container {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.agenda-container:last-child {
+    margin-bottom: 0;
 }
 
 .agenda-item {
@@ -467,6 +605,8 @@ header {
     font-weight: 700;
     cursor: pointer;
     transition: var(--transicion);
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-outline:hover {
@@ -665,9 +805,17 @@ footer {
     .hero-content h1 {
         font-size: 3.5rem;
     }
+    
+    .banner-img {
+        max-width: 120%;
+    }
 
     .agenda h2 {
         font-size: 2.3rem;
+    }
+    
+    .carousel-slide img {
+        height: 400px;
     }
 
     .footer-container {
@@ -790,7 +938,8 @@ footer {
         width: 100%;
     }
 
-    .btn-red,
+    /* Botones del mismo ancho en móvil */
+    .btn-orange,
     .btn-blue {
         width: 100%;
         max-width: 300px;
@@ -848,8 +997,44 @@ footer {
     .banner-img {
         max-width: 100%;
     }
+    
+    /* Galería móvil */
+    .gallery-section {
+        padding: 50px 15px;
+    }
+    
+    .gallery-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .carousel-slide img {
+        height: 300px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-btn.prev {
+        left: 10px;
+    }
+    
+    .carousel-btn.next {
+        right: 10px;
+    }
+    
+    .carousel-btn i {
+        font-size: 1rem;
+    }
+    
+    .slide-description {
+        font-size: 0.95rem;
+        padding: 20px 15px 15px;
+    }
 
-    /* Agenda móvil */
+    /* Agenda móvil - Espaciado mejorado */
     .agenda {
         padding: 50px 15px;
     }
@@ -860,6 +1045,10 @@ footer {
 
     .agenda-subtitle {
         font-size: 1rem;
+    }
+    
+    .agenda-container {
+        margin-bottom: 35px;
     }
 
     .agenda-item {
@@ -971,6 +1160,14 @@ footer {
 
     .subtitle {
         font-size: 1rem;
+    }
+    
+    .gallery-section h2 {
+        font-size: 1.7rem;
+    }
+    
+    .carousel-slide img {
+        height: 250px;
     }
 
     .agenda h2 {
