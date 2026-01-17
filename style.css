@@ -1228,11 +1228,11 @@ footer {
     }
 
     .date-box .day {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .date-box .month {
-        font-size: 1rem;
+        font-size: 2rem;
         align-self: center;
     }
 
