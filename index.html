@@ -289,6 +289,23 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <p class="lightbox-description" id="lightboxDescription"></p>
+        </div>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Menú hamburguesa
         const menuToggle = document.getElementById('menuToggle');
@@ -399,6 +416,82 @@
 
         // Ajustar el carrusel al redimensionar la ventana
         window.addEventListener('resize', updateSlides);
+
+        // ============================================
+        // LIGHTBOX FUNCTIONALITY
+        // ============================================
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxDescription = document.getElementById('lightboxDescription');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        let currentLightboxIndex = 0;
+
+        // Agregar evento click a todas las imágenes del carrusel
+        slides.forEach((slide, index) => {
+            const img = slide.querySelector('img');
+            img.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightbox() {
+            const currentSlideElement = slides[currentLightboxIndex];
+            const img = currentSlideElement.querySelector('img');
+            const description = currentSlideElement.querySelector('.slide-description');
+            
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxDescription.textContent = description.textContent;
+        }
+
+        // Eventos del lightbox
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        lightboxPrev.addEventListener('click', () => {
+            currentLightboxIndex = (currentLightboxIndex - 1 + slides.length) % slides.length;
+            updateLightbox();
+        });
+
+        lightboxNext.addEventListener('click', () => {
+            currentLightboxIndex = (currentLightboxIndex + 1) % slides.length;
+            updateLightbox();
+        });
+
+        // Cerrar lightbox al hacer click en el fondo oscuro
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Cerrar lightbox con tecla ESC y navegar con flechas
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                currentLightboxIndex = (currentLightboxIndex - 1 + slides.length) % slides.length;
+                updateLightbox();
+            } else if (e.key === 'ArrowRight') {
+                currentLightboxIndex = (currentLightboxIndex + 1) % slides.length;
+                updateLightbox();
+            }
+        });
 
         // Contador regresivo real
         function updateCountdown() {
