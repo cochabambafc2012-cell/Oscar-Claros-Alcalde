@@ -333,21 +333,21 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* Imagen hero - Ajustada para mejor posicionamiento */
+/* Imagen hero - Ajustada para mejor posicionamiento en WEB */
 .hero-image {
     flex: 1.2;
     display: flex;
-    justify-content: flex-start; /* Cambiado de center a flex-start para mover hacia la izquierda */
+    justify-content: flex-start;
     align-items: center;
-    padding-left: 20px; /* Añadido padding para controlar el espacio */
+    padding-left: 20px;
 }
 
 .banner-img {
-    max-width: 110%; /* Reducido de 120% a 110% para evitar recortes excesivos */
+    max-width: 110%;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    margin-left: -10%; /* Desplaza la imagen hacia la izquierda */
+    margin-left: -10%;
 }
 
 /* =====================================================
@@ -1126,12 +1126,16 @@ footer {
         font-size: 2rem;
     }
 
+    /* Imagen hero centrada en móvil */
     .hero-image {
         width: 100%;
+        padding-left: 0;
+        justify-content: center;
     }
 
     .banner-img {
         max-width: 100%;
+        margin-left: 0;
     }
     
     /* Galería móvil */
@@ -1381,4 +1385,3 @@ footer {
         font-size: 1.8rem;
     }
 }
-
