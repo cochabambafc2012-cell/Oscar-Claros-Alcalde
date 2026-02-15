@@ -333,19 +333,21 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* Imagen hero - 20% más grande en versión web */
+/* Imagen hero - Ajustada para mejor posicionamiento */
 .hero-image {
     flex: 1.2;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Cambiado de center a flex-start para mover hacia la izquierda */
     align-items: center;
+    padding-left: 20px; /* Añadido padding para controlar el espacio */
 }
 
 .banner-img {
-    max-width: 120%;
+    max-width: 110%; /* Reducido de 120% a 110% para evitar recortes excesivos */
     height: auto;
     border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    margin-left: -10%; /* Desplaza la imagen hacia la izquierda */
 }
 
 /* =====================================================
