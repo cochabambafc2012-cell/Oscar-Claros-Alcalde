@@ -151,7 +151,7 @@ header {
     background: var(--naranja);
     color: white !important;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 80, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 20, 137, 0.3);
 }
 
 /* =====================================================
@@ -411,7 +411,7 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 20, 137, 0.95), transparent);
+    background: linear-gradient(to top, rgba(255, 80, 0, 0.95), transparent);
     color: white;
     padding: 30px 20px 20px;
     font-size: 1.1rem;
